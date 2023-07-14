@@ -7,6 +7,7 @@
 /* GLOBAL */
 .hidden{
 	display: none;
+	opacity: 0;
 }
 a, a:hover, .nav-link{
 	text-decoration: none;
