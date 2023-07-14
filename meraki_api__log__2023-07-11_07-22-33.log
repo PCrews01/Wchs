@@ -1,0 +1,19 @@
+2023-07-11 07:22:34       meraki:     INFO > Meraki dashboard API session initialized with these parameters: {'version': '1.34.0', 'api_key': '************************************c1fa', 'base_url': 'https://api.meraki.com/api/v1', 'single_request_timeout': 60, 'certificate_path': '', 'requests_proxy': '', 'wait_on_rate_limit': True, 'nginx_429_retry_wait_time': 60, 'action_batch_retry_wait_time': 60, 'retry_4xx_error': False, 'retry_4xx_error_wait_time': 60, 'maximum_retries': 2, 'simulate': False, 'be_geo_id': None, 'caller': None, 'use_iterator_for_get_pages': False, 'python_version_warning_string': 'This library requires Python 3.7 at minimum. Python versions 3.6 and below are end of life and end of support per the Python maintainers, and your interpreter version is 3.9.6 (default, Mar 10 2023, 20:16:38) \n[Clang 14.0.3 (clang-1403.0.22.14.1)]. Please consult the readme at your convenience: https://github.com/meraki/dashboard-api-python'}
+2023-07-11 07:22:34       meraki:    DEBUG > {'tags': ['organizations', 'configure'], 'operation': 'getOrganizations', 'method': 'GET', 'url': '/organizations', 'params': None}
+2023-07-11 07:22:34       meraki:     INFO > GET https://api.meraki.com/api/v1/organizations
+2023-07-11 07:22:35       meraki:     INFO > organizations, getOrganizations - 200 OK
+2023-07-11 07:22:35       meraki:    DEBUG > {'tags': ['organizations', 'configure', 'networks'], 'operation': 'getOrganizationNetworks', 'page': 1}
+2023-07-11 07:22:35       meraki:     INFO > GET https://api.meraki.com/api/v1/organizations/453848/networks
+2023-07-11 07:22:35       meraki:     INFO > organizations, getOrganizationNetworks; page 1 - 200 OK
+2023-07-11 07:22:35       meraki:    DEBUG > {'tags': ['organizations', 'configure', 'devices'], 'operation': 'getOrganizationDevices', 'page': 1}
+2023-07-11 07:22:35       meraki:     INFO > GET https://api.meraki.com/api/v1/organizations/453848/devices
+2023-07-11 07:22:36       meraki:     INFO > organizations, getOrganizationDevices; page 1 - 200 OK
+2023-07-11 07:22:36       meraki:    DEBUG > {'tags': ['wireless', 'configure', 'ssids'], 'operation': 'getNetworkWirelessSsids', 'method': 'GET', 'url': '/networks/L_650207196201623938/wireless/ssids', 'params': None}
+2023-07-11 07:22:36       meraki:     INFO > GET https://api.meraki.com/api/v1/networks/L_650207196201623938/wireless/ssids
+2023-07-11 07:22:36       meraki:     INFO > wireless, getNetworkWirelessSsids - 200 OK
+2023-07-11 07:22:36       meraki:    DEBUG > {'tags': ['networks', 'monitor', 'clients'], 'operation': 'getNetworkClients', 'page': 1}
+2023-07-11 07:22:36       meraki:     INFO > GET https://api.meraki.com/api/v1/networks/L_650207196201623938/clients
+2023-07-11 07:22:41       meraki:     INFO > networks, getNetworkClients; page 1 - 200 OK
+2023-07-11 07:22:41       meraki:    DEBUG > {'tags': ['networks', 'configure', 'devices'], 'operation': 'getNetworkDevices', 'method': 'GET', 'url': '/networks/L_650207196201623938/devices', 'params': None}
+2023-07-11 07:22:41       meraki:     INFO > GET https://api.meraki.com/api/v1/networks/L_650207196201623938/devices
+2023-07-11 07:22:42       meraki:     INFO > networks, getNetworkDevices - 200 OK
