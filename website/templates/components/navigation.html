@@ -1,0 +1,52 @@
+<div class="container-fluid p-0 m-0 w-100">
+  <div class="flex-center">
+    <img src="{{url_for('static', filename='images/logos/logo_wide_green.png')}}" class="w-25" />
+  </div>
+  <nav class="navbar sticky-top bg-main text-light row" style="width:100%">
+    <div class="col-sm-1 col-xs-0"></div>
+    <div class="container-fluid p-0 m-auto ht-fill col-sm-8 col-xs-10 flex-center">
+      <ul class="flex flex-row j-center space-between w-100 ht-fill my-nav-links slide-up">
+        <li class="nav-item p-2">
+          <a class="nav-link active p-2 rounded-2 pointer" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item p-2">
+          <a class="nav-link p-2 rounded-2 active pointer" aria-current="page" href="/our-story">Our Story</a>
+        </li>
+        <li class="nav-item p-2">
+          <a class="nav-link p-2 rounded-2 pointer" href="/academics">Academics</a>
+        </li>
+        <li class="nav-item p-2">
+          <a class="nav-link p-2 rounded-2 pointer" href="/student-life">Student Life</a>
+        </li>
+        <li class="nav-item p-2">
+          <a class="nav-link p-2 rounded-2 pointer" href="/news">News</a>
+        </li>
+        <li class="nav-item p-2">
+          <a class="nav-link p-2 rounded-2 pointer" href="/contact/admissions"><b>Admissions</b></a>
+        </li>
+        <!-- <li class="nav-item p-2">
+          <a class="nav-link p-2 rounded-2 pointer" href="/student-center">Student Center</a>
+        </li> -->
+      </ul>
+    </div>
+    <div class="flex flex-column flex-center col-sm-1 col-xs-12">
+    {%if not current_user.email %}
+      <a class="nav-link pointer" href="/login">
+        <button class="btn btn-light btn-sm ">Sign In</button>
+      </a>
+      {% else %}
+      <span>
+        <a href="/users/">
+          <img src="{{current_user.picture}}" class="rounded-circle m-2" style="position: relative;height:5dvh;width:5dvh;" />
+        </a>
+      </span>
+      <span>
+        <a class="nav-link pointer" href="/logout">
+          <button class="btn btn-danger btn-sm w-100">Sign Out</button>
+        </a>
+      </span>
+    {% endif %}
+    </div>
+</div>
+</nav>
+</div>

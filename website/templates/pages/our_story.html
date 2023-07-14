@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid relative">
+    <div class="row">
+        <div class="col-sm-6 col-xs-12 order-1 order-xs-2 flex-column space-between">
+            <img src="{{url_for('static', filename='images/backgrounds/building.jpg')}}" class="object-fit-cover border rounded w-100" />
+            <img src="{{url_for('static', filename='images/WCHS-55.jpg')}}" class="object-fit-cover border rounded w-100" />
+            <img src="{{url_for('static', filename='images/WCHS-67.jpg')}}" class="object-fit-cover border rounded w-100" />
+        </div>
+        <div class="col-sm-6 col-xs-12 order-2 order-xs-1">
+            <div class="our-story text-light relative flex-center flex-column">
+                <div style="z-index: 10;" class="flex-center flex-column p-4 ">
+                    <img src="{{url_for('static', filename='images/logos/logo_wide.png')}}" class="ht-10d" />
+                    <h1 class="fw-bold">Our Story</h1>
+                    {% for pg in story_paragraphs %}
+                    <p class="fs-25d">{{pg}}</p>
+                    {% endfor %}
+                </div>
+                <div class="shadow bg-dark-blur rounded-3"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

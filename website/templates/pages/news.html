@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <h1 class="m-4"><b>WCHS News</b></h1>
+    <div class="row row-cols-sm-3 g-5">
+        {% for index, article in articles %}
+        <div class="col-sm-4 col-xs-12 card slide-up-{{index}}" id="{{article.title.replace(' ', '_')}}">
+            <h3><b>{{article.title}}</b></h3> <small>By: {{article.author}} on {{article.date}}</small>
+            <img src="{{get_image(article.image)}}" class="card-top" />
+            <div class="card-body flex-column space-between">
+                <div class="story-ellipsis mb-2">{{article.story}}</div>
+                <div class="w-100 rounded-2">
+                    <a href="/news/1">
+                        <button class="btn btn-success w-100 rounded-2 slide-up">Read article</button>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+</div>
+{% endblock content %}

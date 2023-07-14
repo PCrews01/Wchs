@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container p-0 overflow-scroll student-life-page">
+    <div class="img-wrapper ht-50d overflow-hidden">
+        <img src="{{url_for('static', filename='images/backgrounds/building.jpg')}}" class="object-fit-cover slide-up" />
+        <!-- <div class="card-img-overlay dark-overlay-main">Student Life</div> -->
+    </div>
+    <div class="row mt-4">
+        <div class="col-sm-6 col-xs-12 flex-center">
+            <img src="{{url_for('static', filename='images/protest.jpg')}}" class="w-100 slider-round" />
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <h1 id="voice"><b>Student Voice</b></h1>
+            {% for paragraph in voice %}
+            <p>{{paragraph}}</p>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-sm-6 col-xs-12">
+            <h1 id="dance"><b>WCHS Dance Program</b></h1>
+            {% for paragraph in dance %}
+            <p>{{paragraph}}</p>
+            {% endfor %}
+        </div>
+        <div class="col-sm-6 col-xs-12 flex-center">
+            <img src="{{url_for('static', filename='images/Dance4.jpg')}}" class="w-100 slide-left" />
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-sm-6 col-xs-12 flex-center">
+            <img src="{{url_for('static', filename='images/music_lesson.jpg')}}" class="w-100 slide-left" />
+        </div>
+        <div class="col-sm-6 col-xs-12">
+            <h1 id="music"><b>WCHS Music</b></h1>
+            {% for paragraph in music %}
+            <p>{{paragraph}}</p>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <img src="{{url_for('static', filename='images/Cast-2.jpg')}}" class="w-100 slide-left" />
+        </div>
+        <div class="col-sm-6 col-xs-12 offset-sm-3">
+            <h1 id="theater"><b>WCHS Theater Program</b></h1>
+            {% for paragraph in theater %}
+            <p>{{paragraph}}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

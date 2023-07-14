@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container flex-column space-between mht-80d">
+    <div class="m-5">
+    <h1 class="slide-right"><b>{{article.title}}</b></h1>
+    <h6>By: {{article.author}} on {{article.date}}</h6>
+    <hr />
+    <img src="{{get_image(article.image)}}" class="w-100 m-auto slide-up" />
+    <div class="article-story mt-4">
+        {{article.story}}
+    </div>
+</div>
+<div class="flex-row space-between mt-4">
+    <a href="/news">
+        &LeftAngleBracket; Back to News
+    </a>
+    <a href="/news/{% if id >= count - 1 %} 0 {% else %} {{id + 1}} {% endif %}">
+       {% if id >= count - 1 %} First {% else %} Next {% endif %} Article &RightAngleBracket; 
+    </a>
+</div>
+</div>
+{% endblock %}

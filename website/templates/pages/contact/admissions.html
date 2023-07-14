@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-xs-12">
+            <div id="admission_carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active"  data-bs-interval="2500">
+                    <img src="{{url_for('static', filename='images/Dance4.jpg')}}" class="d-block ht-70d object-contain" alt="WCHS dance program.">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2500">
+                    <img src="{{url_for('static', filename='images/on-landing-sm.jpg')}}" class="d-block ht-70d object-contain" alt="WCHS student culture.">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2500">
+                    <img src="{{url_for('static', filename='images/girls_championship.jpg')}}" class="d-block ht-70d object-contain" alt="WCHS girls volleyball champions">
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-6 col-xs-12 m-auto flex-column flex-center ht-70d m-auto bg-dark-blurry slide-up">
+            <h2><b>WCHS Admissions</b></h2>
+            <h6><b>Step 1: Create an account: </b></h6>
+            <h6>Create an account with Williamsburg Charter High School via SchoolMint<sup><small>&copy;</small></sup>.</h6>
+            <form action="/" class="slide-up p-4 w-100">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <input type="email" id="email" name="email" class="form-control admission-form-field text-main" />
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <input type="email" id="email_confirm" name="email_confirm" class="form-control admission-form-field text-main" />
+                            <label for="email_confirm">Confirm Email</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <input type="password" id="phrase" name="phrase" class="form-control admission-form-field text-main" />
+                            <label for="phrase">Password</label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-floating mb-3">
+                            <input type="password" id="phrase_confirm" name="phrase_confirm" class="form-control admission-form-field text-main" />
+                            <label for="phrase_confirm">Confirm Password</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-row space-between">
+                    <button class="btn btn-warning" type="reset">Clear Form</button>
+                    <button class="btn btn-success" type="button">Submit Form</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

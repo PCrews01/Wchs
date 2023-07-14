@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container ht-full">
+    <div class="row">
+        <div class="col-8">
+            <div class="my-form">
+                <form method="post">
+                    <div class="row m-3">
+                        <div class="form-floating mb-3 col-6">
+                            <input type="text" id="first_name" name="first_name" class="form-control" />
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="form-floating mb-3 col-6">
+                            <input type="text" id="last_name" name="last_name" class="form-control" />
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="form-floating mb-3 col-6">
+                            <input type="email" id="email" name="email" class="form-control" />
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-floating mb-3 col-6">
+                            <input type="text" id="last_name" name="last_name" class="form-control" />
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-4">
+            Contact Info.
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">198 Varet <sup><small>St</small></sup></li>
+                <li class="list-group-item">
+                    <tel>+1 718 782 9830</tel>
+                </li>
+                <li class="list-group-item">+1 718 497 0476</li>
+                <li class="list-group-item">contact@thewcs.org</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}

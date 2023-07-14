@@ -1,0 +1,212 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid text-light flex-column">
+	<div id="carouselExampleFade" class="carousel slide carousel-fade overflow-hidden" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class="card-img-overlay bg-overlay-dark flex-column j-center">
+					<div class="flex-column flex-center w-50 push-right p-3">
+						<img src="{{url_for('static', filename='images/logos/logo_wide_green.png')}}"
+							class="d-block w-25">
+						<h1><b>Check out our Ceramics Lab</b></h1>
+						<a href="/student-life#ceramics" class="">
+							<button class="btn btn-success">Check it out</button>
+						</a>
+					</div>
+				</div>
+				<img src="{{url_for('static', filename='images/ceramics.jpg')}}"
+					class="d-block w-100 ht-fill object-fill" alt="WCHS Ceramics">
+			</div>
+			<div class="carousel-item">
+				<div class="card-img-overlay bg-overlay-dark flex-column j-center">
+					<div class="flex-column flex-center w-50 push-right p-3">
+						<img src="{{url_for('static', filename='images/logos/logo_wide_green.png')}}"
+							class="d-block w-25">
+						<h1><b>Check out our Theater Club</b></h1>
+						<a href="student-life#theater" class="">
+							<button class="btn btn-success">Check it out</button>
+						</a>
+					</div>
+				</div>
+				<img src="{{url_for('static', filename='images/cast-2.jpg')}}" class="d-block w-100 ht-fill object-fill"
+					alt="WCHS Theater Club">
+			</div>
+			<div class="carousel-item">
+				<div class="card-img-overlay bg-overlay-dark flex-column j-center">
+					<div class="flex-column flex-center w-50 push-right p-3">
+						<img src="{{url_for('static', filename='images/logos/logo_wide_green.png')}}"
+							class="d-block w-25">
+						<h1><b>Check out our Music Program</b></h1>
+						<a href="/student-life#music" class="">
+							<button class="btn btn-success">Check it out</button>
+						</a>
+					</div>
+				</div>
+				<img src="{{url_for('static', filename='images/music_lesson.jpg')}}"
+					class="d-block w-100 ht-fill object-fit" alt="WCHS Music Program">
+			</div>
+		</div>
+	</div>
+	<div class="row ht-30d overflow-hidden relative card p-0 m-0">
+		<img src="{{url_for('static', filename='images/backgrounds/building.jpg')}}" class="d-block w-100 card-img" />
+		<div class="card-img-overlay bg-overlay-main flex-center flex-column">
+			<img src="{{url_for('static', filename='images/logos/logo_wide.png')}}" />
+			<div class="container fs-sm fw-bold flex-center">
+				Welcome to Williamsburg Charter High School, where a legacy of educational brilliance has flourished.
+				Step into a realm brimming with possibilities, where brilliance thrives, dreams ignite, and greatness is
+				kindled.
+			</div>
+		</div>
+	</div>
+	<div class="row mt-4 mb-4">
+		<div class="container">
+			<div class="row m-auto p-4">
+				<div class="col-sm-4 col-xs-12 flex-center">
+					<div class="card bg-main ht-80d">
+						<img src="{{url_for('static', filename='images/Dance1.jpg')}}" class="card-img-top ht-40d" />
+						<h2 class="card-header">WCHS Dance</h2>
+						<div class="card-body mt-2 text-light ht-20d flex-column space-between">
+							<div class="story-ellipsis">
+								{{random_text(2, "paragraphs")}}
+							</div>
+							<div class="w-100">
+								<a href="/student-life#dance">
+								<button class="btn btn-light text-success">More Information</button>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4 col-xs-12 flex-center">
+					<div class="card bg-main ht-80d">
+						<img src="{{url_for('static', filename='images/championship.jpg')}}"
+							class="card-img-top ht-40d" />
+						<h2 class="card-header">WCHS Sports</h2>
+						<div class="card-body mt-2 text-light ht-20d flex-column space-between">
+							<div class="story-ellipsis">
+								{{random_text(2, "paragraphs")}}
+							</div>
+							<div class="w-100">
+								<a href="/student-life#sports">
+								<button class="btn btn-light text-success">More Information</button>
+							</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4 col-xs-12 flex-center">
+					<div class="card bg-main ht-80d">
+						<img src="{{url_for('static', filename='images/AlumniArt3.jpg')}}"
+							class="card-img-top ht-40d" />
+						<h2 class="card-header">WCHS Arts</h2>
+						<div class="card-body mt-2 text-light ht-20d flex-column space-between">
+							<div class="story-ellipsis">
+								{{random_text(2, "paragraphs")}}
+							</div>
+							<div class="w-100">
+								<a href="/student-life#arts">
+								<button class="btn btn-light text-success">More Information</button>
+							</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- NEWS SECTION -->
+	<div class="row bg-main">
+
+		<div class="col-sm-4 col-xs-12 flex-center flex-column p-4 ht-fill">
+			<div class="accordion w-100" id="news_accordion">
+				<div class="accordion-item">
+					<h2 class="accordion-header">
+						<button class="accordion-button ellipsis" type="button" data-bs-toggle="collapse"
+							data-bs-target="#collapse_header" aria-expanded="true" aria-controls="collapse_header">
+							<h2>WCHS News</h2>
+						</button>
+					</h2>
+				</div>
+				{% for index,article in e %}
+				<div class="accordion-item">
+					<h1 class="accordion-header">
+						<button class="accordion-button collapsed ellipsis" type="button" data-bs-toggle="collapse"
+							data-bs-target="#collapse{{article.title.replace(' ', '-')}}" aria-expanded="false"
+							aria-controls="collapse{{article.title.replace(' ', '-')}}" onclick="changeImg('{{get_image(article.image)}}', '{{article.headline}}')">
+							{{article.title}}
+						</button>
+					</h1>
+					<div id="collapse{{article.title.replace(' ', '-')}}" class="accordion-collapse collapse {% if index == 0 %} show {% endif %}"
+						data-bs-parent="#news_accordion">
+						<div class="accordion-body flex-column space-between">
+							<img src="{{get_image(article.image)}}" class="card-top" />
+							<div class="story-ellipsis mb-2">{{article.story}}</div>
+							<div class="w-100 rounded-2">
+								<a href="/news/{{index}}">
+								<button class="btn btn-success w-100 rounded-2 slide-up">Read article</button>
+								</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="col-sm-8 col-xs-12 flex-center">
+			<div class="card ht-90d w-100">
+				<img src="{{get_image(news_img)}}" class="card-img d-block w-100 ht-fill object-fill" id="news_article_img" />
+				<div class="card-img-overlay a-end bg-overlay-dark ">
+					<h1 id="article_title">Williamsburg Charter High School News</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row flex-center text-dark">
+	</div>
+
+	<!-- GENERAL INQUIRY SECTION -->
+	<div class="row relative mt-4 mb-4">
+		<div class="col-sm-8 col-xs-12">
+			<img src="{{url_for('static', filename='images/science.jpg')}}" class="d-block relative w-100 ht-60d" />
+		</div>
+		<div class="col-sm-4 col-xs-12 overflow-hidden relative" style="position:relative">
+			<img src="{{url_for('static', filename='images/backgrounds/building.jpg')}}" class="d-block ht-60d w-100" style="object-fit: cover;object-position: right bottom;" />
+			<div class="bg-dark-blurry rounded-2 shadow-lg p-3 bg-body-tertiary" style="position: absolute;margin:auto;min-height:40dvh;width:80%;top:0;bottom:0;left:0;right:0">
+				<div class="m-auto">
+					<h1><b>Ask a question</b></h1>
+					<form action="/" class="flex-column space-between">
+						<div class="">
+						<div class="form-floating mb-3">
+							<input type="text" name="full_name" id="full_name" placeholder="Full Name" class="form-control form-field" />
+							<label for="full_name">Full Name</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="text" name="email" id="email" placeholder="Email Address" class="form-control form-field d-inline-flex focus-ring-success py-1 px-2 text-decoration-none border-success round" />
+							<label for="email">Email</label>
+						</div>
+						<div class="form-floating mb-3">
+							<label for="subject" class="form-label">Subject <i><small><sup>(Start typing to see list)</sup></small></i></label>
+						<input list="subjects" class="form-control form-field" id="subject" name="subject" placeholder="Inquiry Subject" />
+						<datalist id="subjects" class="form-field">
+							<option value="Admissions">
+							<option value="Attendance">
+							<option value="Grades">
+							<option value="Calendar">
+							<option value="General">
+							</datalist>
+						</div>
+						<div class="form-floating mb-3">
+							<textarea name="inquiry" id="inquiry" placeholder="Inquiry" class="form-control form-field" rows="5"></textarea>
+							<label for="inquiry">Inquiry</label>
+						</div>
+						</div>
+						<button class="btn btn-success" id="submit_btn">Submit Inquiry</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
